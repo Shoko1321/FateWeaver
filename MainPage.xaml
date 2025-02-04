@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FateWeaver.MainPage"
+             MinimumWidthRequest="350"
+             MinimumHeightRequest="500">
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="witch.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Witch" />
+
+            <Label
+                Text="Welcome to FateWeaver, A 5e character Helper"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                <Button
+                    x:Name="NewBtn"
+                    Text="New Character" 
+                    SemanticProperties.Hint="Make a new character"
+                    Clicked="OnNewCharacterClicked" 
+                    WidthRequest="150"/>
+                <Button
+                    x:Name="LoadBtn"
+                    Text="Load Character"
+                    SemanticProperties.Hint="Load a character"
+                    Clicked="OnLoadCharacterClicked" 
+                    WidthRequest="150"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,58 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FateWeaver.CharacterCreationPage">
+
+    <VerticalStackLayout Padding="30,0" Spacing="25">
+        <Label
+            Text="Character Creation"
+            Style="{StaticResource Headline}"
+            SemanticProperties.HeadingLevel="Level1" />
+
+        <!-- Button to roll stats -->
+        <Button
+            Text="Roll 4d6 (Drop Lowest)"
+            Clicked="OnRoll4d6Clicked"
+            SemanticProperties.Hint="Click to roll stats using 4d6" />
+
+        <!-- Horizontal stack for showing the rolled numbers -->
+        <HorizontalStackLayout x:Name="RollsContainer" Padding="10" Spacing="10">
+            <!-- These Labels will be populated dynamically with the rolls -->
+        </HorizontalStackLayout>
+
+        <!-- Grid for Stats and assignment options -->
+        <Grid Padding="10" RowSpacing="10" ColumnSpacing="10" ColumnDefinitions="*, Auto">
+            <!-- Define rows for each stat and their corresponding assign button -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Labels for attributes in the first column -->
+            <Label Grid.Row="0" Text="Strength" FontFamily="DragonSlayer" />
+            <Label Grid.Row="1" Text="Dexterity" FontFamily="DragonSlayer" />
+            <Label Grid.Row="2" Text="Constitution" FontFamily="DragonSlayer" />
+            <Label Grid.Row="3" Text="Intelligence" FontFamily="DragonSlayer" />
+            <Label Grid.Row="4" Text="Wisdom" FontFamily="DragonSlayer" />
+            <Label Grid.Row="5" Text="Charisma" FontFamily="DragonSlayer" />
+
+            <!-- Picker for assigning rolls to attributes -->
+            <Picker Grid.Row="0" x:Name="StrengthPicker" SelectedIndexChanged="OnStrengthPickerChanged" 
+                    BackgroundColor="Transparent" TextColor="#800080" />
+            <Picker Grid.Row="1" x:Name="DexterityPicker" SelectedIndexChanged="OnDexterityPickerChanged" 
+                    BackgroundColor="Transparent" TextColor="#800080" />
+            <Picker Grid.Row="2" x:Name="ConstitutionPicker" SelectedIndexChanged="OnConstitutionPickerChanged" 
+                    BackgroundColor="Transparent" TextColor="#800080" />
+            <Picker Grid.Row="3" x:Name="IntelligencePicker" SelectedIndexChanged="OnIntelligencePickerChanged" 
+                    BackgroundColor="Transparent" TextColor="#800080" />
+            <Picker Grid.Row="4" x:Name="WisdomPicker" SelectedIndexChanged="OnWisdomPickerChanged" 
+                    BackgroundColor="Transparent" TextColor="#800080" />
+            <Picker Grid.Row="5" x:Name="CharismaPicker" SelectedIndexChanged="OnCharismaPickerChanged" 
+                    BackgroundColor="Transparent" TextColor="#800080" />
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>
